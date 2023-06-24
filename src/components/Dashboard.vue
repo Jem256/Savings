@@ -3,7 +3,8 @@
 	  <div class="sidebar">
 		<ul>
 		  <li @click="selectSection('customerList')" :class="{ active: currentSection === 'customerList' }">Customer List</li>
-		  <li @click="selectSection('savingsTransactions')" :class="{ active: currentSection === 'savingsTransactions' }">Savings Transactions</li>
+		  <li @click="selectSection('totalSavings')" :class="{ active: currentSection === 'totalSavings' }">All Transactions</li>
+		  <li @click="selectSection('savingsTransactions')" :class="{ active: currentSection === 'savingsTransactions' }">Add Transactions</li>
 		  <li @click="selectSection('savingsProductManagement')" :class="{ active: currentSection === 'savingsProductManagement' }">Savings Product Management</li>
 		</ul>
 	  </div>
@@ -12,6 +13,10 @@
 		<div v-if="currentSection === 'customerList'">
 		  <!-- Customer List Component -->
 		  <CustomerList />
+		</div>
+		<div v-else-if="currentSection === 'totalSavings'">
+		  <!-- Total Savings Transactions Component -->
+		  <TotalSavings />
 		</div>
 		<div v-else-if="currentSection === 'savingsTransactions'">
 		  <!-- Savings Transactions Component -->
@@ -27,16 +32,18 @@
   
   <script>
   import CustomerList from './CustomerList.vue';
+  import TotalSavings from './TotalSavings.vue';
   import SavingsTransactions from './SavingsTransactions.vue';
   import SavingsProductManagement from './SavingsProductManagement.vue';
   
   export default {
 	name: 'Dashboard',
 	components: {
-	  CustomerList,
-	  SavingsTransactions,
-	  SavingsProductManagement
-	},
+    CustomerList,
+    SavingsTransactions,
+    SavingsProductManagement,
+    TotalSavings
+},
 	data() {
 	  return {
 		currentSection: 'customerList',
@@ -52,6 +59,8 @@
 		  this.currentSectionTitle = 'Savings Transactions';
 		} else if (section === 'savingsProductManagement') {
 		  this.currentSectionTitle = 'Savings Product Management';
+		} else if (section === 'totalSavings') {
+		  this.currentSectionTitle = 'All Savings';
 		}
 	  }
 	}
