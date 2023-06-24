@@ -1,11 +1,7 @@
 <template>
-	<div class="signup-container">
-	  <h2>Sign Up</h2>
-	  <form @submit.prevent="signup" class="signup-form">
-		<div class="form-group">
-		  <label for="name">Name:</label>
-		  <input type="text" id="name" v-model="name" required>
-		</div>
+	<div class="login-container">
+	  <h2>Login</h2>
+	  <form @submit.prevent="login" class="login-form">
 		<div class="form-group">
 		  <label for="email">Email:</label>
 		  <input type="email" id="email" v-model="email" required>
@@ -14,25 +10,22 @@
 		  <label for="password">Password:</label>
 		  <input type="password" id="password" v-model="password" required>
 		</div>
-		<button v-on:click="signup" type="submit">Sign Up</button>
+		<button v-on:click="login" type="submit">Login</button>
 	  </form>
 	</div>
   </template>
   
   <script>
-  import axios from 'axios'
-import { onMounted } from 'vue';
   export default {
-	name: 'Signup',
+	name: 'Login',
 	data() {
-		return{
-			name:'',
-			email:'',
-			password:''
-		}
+	  return {
+		email: '',
+		password: ''
+	  };
 	},
 	methods: {
-		async signup()
+		async login()
 		{
 			let result = await axios.post("http://localhost:3000/user", {
 				name: this.name,
@@ -46,20 +39,13 @@ import { onMounted } from 'vue';
 				this.$router.push({name:'Home'})
 			}
 		}
-	},
-	mounted()
-	{
-		let user = localStorage.getItem('user-info');
-		if (user)
-		{
-			this.$router.push({name:'Home'})
-		}
+	  
 	}
   }
   </script>
   
   <style scoped>
-  .signup-container {
+  .login-container {
 	max-width: 400px;
 	margin: 0 auto;
 	padding: 20px;
@@ -67,7 +53,7 @@ import { onMounted } from 'vue';
 	border-radius: 5px;
   }
   
-  .signup-form {
+  .login-form {
 	display: flex;
 	flex-direction: column;
   }
@@ -80,7 +66,6 @@ import { onMounted } from 'vue';
 	font-weight: bold;
   }
   
-  input[type="text"],
   input[type="email"],
   input[type="password"] {
 	width: 100%;
