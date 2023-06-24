@@ -14,7 +14,10 @@
 		  <label for="password">Password:</label>
 		  <input type="password" id="password" v-model="password" required>
 		</div>
-		<button v-on:click="signup" type="submit">Sign Up</button>
+		<button type="submit">Sign Up</button>
+		<p>
+			<router-link to="login">Login</router-link>
+		</p>
 	  </form>
 	</div>
   </template>
