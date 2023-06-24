@@ -1,10 +1,15 @@
 <template>
 	<h1>I am Home!</h1>
-  </template>
+	<Dashboard />
+</template>
 
 <script>
+import Dashboard from './Dashboard.vue'
 export default {
 	name: 'Home',
+	components: {
+		Dashboard
+	},
 	mounted()
 	{
 		let user = localStorage.getItem('user-info');

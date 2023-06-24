@@ -24,7 +24,6 @@
   
   <script>
   import axios from 'axios'
-import { onMounted } from 'vue';
   export default {
 	name: 'Signup',
 	data() {

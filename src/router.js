@@ -17,14 +17,19 @@ const routes = [
         component: () => import('./components/Login.vue'),
     },
     {
-        path: '/accounts',
-        name: 'Accounts',
-        component: () => import('./components/Accounts.vue'),
+        path: '/customer-list',
+        name: 'customerList',
+        component: () => import('./components/CustomerList.vue'),
     },
     {
-        path: '/transactions',
-        name: 'Transactions',
-        component: () => import('./components/Transactions.vue'),
+        path: '/savings-transactions',
+        name: 'savingsTransactions',
+        component: () => import('./components/SavingsTransactions.vue'),
+    },
+    {
+        path: '/savings-product-management',
+        name: 'savingsProductManagement',
+        component: () => import('./components/SavingsProductManagement.vue'),
     },
 ];
 
