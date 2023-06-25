@@ -10,13 +10,13 @@ export default {
 	components: {
 		Dashboard
 	},
-	mounted()
-	{
-		let user = localStorage.getItem('user-info');
-		if (!user)
-		{
-			this.$router.push({name:'Signup'})
-		}
-	}
+	// mounted()
+	// {
+	// 	let user = localStorage.getItem('user-info');
+	// 	if (!user)
+	// 	{
+	// 		this.$router.push({name:'Signup'})
+	// 	}
+	// }
 }
 </script>
