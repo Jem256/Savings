@@ -1,5 +1,5 @@
 <template>
-	<h1>I am Home!</h1>
+	<h1>Savings Management System</h1>
 	<Dashboard />
 </template>
 
