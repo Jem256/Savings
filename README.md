@@ -1,7 +1,7 @@
 
 ## Savings Management App
 
-Deployed project [here]](https://jem256.github.io/Savings/) 
+Deployed project [here](https://jem256.github.io/Savings/) 
 
 ## Project Setup
 
